@@ -1,0 +1,82 @@
+{
+    "scopeName": "source.lcml",
+    "patterns": [
+        {
+            "name": "markup.heading.lcml",
+            "match": "^#1\\s+(.+)\\s*$"
+        },
+        {
+            "name": "markup.heading.lcml",
+            "match": "^#2\\s+(.+)\\s*$"
+        },
+        {
+            "name": "markup.heading.lcml",
+            "match": "^#3\\s+(.+)\\s*$"
+        },
+        {
+            "name": "markup.image.lcml",
+            "match": "^#img\\s+(?<url>^\\s+)(?:\\s+(?<alt>\".+\"))?(?:\\s+(?<width>\\d+)\\s+(?<height>\\d+))?\\s*$"
+        },
+        {
+            "name": "markup.video.lcml",
+            "match": "^#video\\s+([^\\s]+)(?:\\s+(\\d+)\\s+(\\d+))?\\s*$"
+        },
+        {
+            "name": "markup.code.lcml",
+            "match": "^#code[\\s]*$"
+        },
+        {
+            "name": "markup.source.lcml",
+            "match": "^(?<source>.*)$"
+        },
+        {
+            "name": "markup.list.lcml",
+            "match": "^(?<item>.+)$"
+        },
+        {
+            "name": "markup.listitem.lcml",
+            "match": "^\\s*\\*\\s+(.+)\\s*$"
+        },
+        {
+            "name": "markup.concepts.lcml",
+            "match": "^#concepts\\s*$"
+        },
+        {
+            "name": "markup.table.lcml",
+            "match": "^#table\\s*(border)?$"
+        },
+        {
+            "name": "markup.scenario.lcml",
+            "match": "^#scenario\\s*$"
+        },
+        {
+            "name": "markup.question.lcml",
+            "match": "^#question[\\s]*$"
+        },
+        {
+            "name": "markup.paragraph.lcml",
+            "begin": "^(?!#)[^\\-\\s].*$",
+            "end": "^\\s*$"
+        },
+        {
+            "name": "markup.linebreak.lcml",
+            "match": "^\\\\$"
+        },
+        {
+            "name": "markup.bold.lcml",
+            "match": "(.*)\\*\\*(.+)\\*\\*(.*)"
+        },
+        {
+            "name": "markup.italic.lcml",
+            "match": "(.*)\\*(.+)\\*(.*)"
+        },
+        {
+            "name": "markup.strike.lcml",
+            "match": "(.*)~~(.+)~~(.*)"
+        },
+        {
+            "name": "markup.link.lcml",
+            "match": "(.*)\\[(.+)\\]\\((.+)\\)(.*)"
+        }
+    ]
+}
