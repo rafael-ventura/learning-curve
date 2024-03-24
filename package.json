@@ -33,6 +33,13 @@
         "scopeName": "source.lcml",
         "path": "./syntaxes/lcml.tmLanguage.json"
       }
+    ],
+    "themes": [
+      {
+        "label": "Learning Curve",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lcml-theme.json"
+      }
     ]
   },
   "scripts": {

@@ -2,81 +2,175 @@
     "scopeName": "source.lcml",
     "patterns": [
         {
-            "name": "markup.heading.lcml",
-            "match": "^#1\\s+(.+)\\s*$"
+            "begin": "^(#1|#2|#3)",
+            "end": "$",
+            "name": "cabecalho.lcml",
+            "patterns": [
+                {
+                    "match": ".+",
+                    "name": "cabecalho.texto.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.heading.lcml",
-            "match": "^#2\\s+(.+)\\s*$"
+            "begin": "^#img\\s+",
+            "end": "$",
+            "name": "imagem.lcml",
+            "patterns": [
+                {
+                    "match": "([^\\s\"]+)(?=\\s|$)",
+                    "name": "imagem.url.lcml"
+                },
+                {
+                    "match": "\"([^\"]*)\"",
+                    "name": "imagem.texto_alternativo.lcml"
+                },
+                {
+                    "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
+                    "name": "imagem.dimensao.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.heading.lcml",
-            "match": "^#3\\s+(.+)\\s*$"
+            "begin": "^#video\\s+",
+            "end": "$",
+            "name": "video.lcml",
+            "patterns": [
+                {
+                    "match": "([^\\s]+)(?=\\s|$)",
+                    "name": "video.url.lcml"
+                },
+                {
+                    "match": "(\\d+)\\s+(\\d+)",
+                    "name": "video.dimensao.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.image.lcml",
-            "match": "^#img\\s+(?<url>^\\s+)(?:\\s+(?<alt>\".+\"))?(?:\\s+(?<width>\\d+)\\s+(?<height>\\d+))?\\s*$"
+            "begin": "^#code\\s*$",
+            "end": "^#code\\s*$",
+            "name": "codigo.lcml",
+            "patterns": [
+                {
+                    "match": ".+",
+                    "name": "codigo.conteudo.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.video.lcml",
-            "match": "^#video\\s+([^\\s]+)(?:\\s+(\\d+)\\s+(\\d+))?\\s*$"
+            "begin": "^#list\\s*$",
+            "end": "^#list\\s*$",
+            "name": "lista.lcml",
+            "patterns": [
+                {
+                    "match": "^.+$",
+                    "name": "lista.item.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.code.lcml",
-            "match": "^#code[\\s]*$"
+            "begin": "^#concepts\\s*$",
+            "end": "^#concepts\\s*$",
+            "name": "conceitos.lcml",
+            "patterns": [
+                {
+                    "match": "^\\-\\s*(.+)$",
+                    "name": "conceitos.item.lcml"
+                },
+                {
+                    "match": "^(?!#concepts|\\-)(.+)$",
+                    "name": "conceitos.descricao.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.source.lcml",
-            "match": "^(?<source>.*)$"
+            "begin": "^#table(?:\\s+(border))?\\s*$",
+            "end": "^#table\\s*$",
+            "name": "tabela.lcml",
+            "patterns": [
+                {
+                    "match": "\\|",
+                    "name": "tabela.divisoria.lcml"
+                },
+                {
+                    "match": "[^|\n]+",
+                    "name": "tabela.conteudo.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.list.lcml",
-            "match": "^(?<item>.+)$"
+            "begin": "^#scenario\\s*$",
+            "end": "^#scenario\\s*$",
+            "name": "cenarios.lcml",
+            "patterns": [
+                {
+                    "match": "^\\-\\s*(.+)$",
+                    "name": "cenarios.passos.lcml"
+                },
+                {
+                    "match": "^(?!#scenario|\\-)(.+)$",
+                    "name": "conceitos.descricao.lcml"
+                }
+            ]
         },
         {
-            "name": "markup.listitem.lcml",
-            "match": "^\\s*\\*\\s+(.+)\\s*$"
+            "begin": "^#question(?:\\s+(\\w+))?\\s*$",
+            "end": "^#question\\s*$",
+            "name": "questao.lcml",
+            "patterns": [
+                {
+                    "match": "^\\(\\*\\)\\s*(.+)$",
+                    "name": "questao.opcao.correta.lcml"
+                },
+                {
+                    "match": "^\\(\\)\\s*(.+)$",
+                    "name": "questao.opcoes.incorretas.lcml"
+                },
+                {
+                    "match": "^(?!#question|\\(\\*\\)|\\(\\))\\s*$",
+                    "name": "questao.enunciado.lcml"
+                },
+                {
+                    "name": "questao.paragrafo.lcml",
+                    "match": "^(?!#question|\\(\\*\\)|\\(\\))\\s*$"
+                }
+            ]
         },
         {
-            "name": "markup.concepts.lcml",
-            "match": "^#concepts\\s*$"
+            "name": "quebra.paragrafo.lcml",
+            "match": "\\\\\\s*$"
         },
         {
-            "name": "markup.table.lcml",
-            "match": "^#table\\s*(border)?$"
+            "name": "link.lcml",
+            "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
         },
         {
-            "name": "markup.scenario.lcml",
-            "match": "^#scenario\\s*$"
+            "name": "negrito.lcml",
+            "match": "(\\*\\*)(.+?)(\\*\\*)"
         },
         {
-            "name": "markup.question.lcml",
-            "match": "^#question[\\s]*$"
+            "name": "italico.lcml",
+            "match": "(\\*)(.+?)(\\*)"
         },
         {
-            "name": "markup.paragraph.lcml",
-            "begin": "^(?!#)[^\\-\\s].*$",
-            "end": "^\\s*$"
+            "name": "tachado.lcml",
+            "match": "(~~)(.+?)(~~)"
         },
         {
-            "name": "markup.linebreak.lcml",
-            "match": "^\\\\$"
+            "name": "sublinhado.lcml",
+            "match": "(__)(.+?)(__)"
         },
         {
-            "name": "markup.bold.lcml",
-            "match": "(.*)\\*\\*(.+)\\*\\*(.*)"
+            "name": "sobrescrito.lcml",
+            "match": "(\\^)(.+?)(\\^)"
         },
         {
-            "name": "markup.italic.lcml",
-            "match": "(.*)\\*(.+)\\*(.*)"
+            "name": "subscrito.lcml",
+            "match": "(~)(.+?)(~)"
         },
         {
-            "name": "markup.strike.lcml",
-            "match": "(.*)~~(.+)~~(.*)"
-        },
-        {
-            "name": "markup.link.lcml",
-            "match": "(.*)\\[(.+)\\]\\((.+)\\)(.*)"
+            "name": "fonte.aumentada.lcml",
+            "match": "(\\+\\+)(.+?)(\\+\\+)"
         }
     ]
 }
