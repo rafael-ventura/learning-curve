@@ -1,0 +1,158 @@
+#1 Cabeçalhos
+
+#1 1. TDD
+#2 1.1 Conceitos de TDD
+#3 1.1.1 Teste Unitário
+
+#1 Codigos
+
+#code
+x = x + 2;
+#code
+
+#code
+public static String getString(String key) {
+return rb != null ? rb.getString(key) : key;
+}
+#code
+
+#1 Listas
+
+#list
+JUnit
+Jest
+#list
+
+#list
+Item número um da lista
+Esse é o item dois da lista
+Terceiro item da lista
+#list
+
+#1 Conceitos
+
+#concepts
+- Conceito UM
+Definição do conceito UM
+- Conceito DOIS
+Definição do conceito DOIS.
+Continuação da definição do conceito DOIS
+#concepts
+
+#concepts
+- TDD
+Test Driven Development (Desenvolvimento Dirigido por Teste)
+- JUnit
+Framework para implementação de scripts de teste em Java
+- Teste Unitário
+Teste realizado em uma única unidade.
+A unidade deve estar isolada das demais.
+#concepts
+
+#1 Tabelas
+
+#table
+Cabeçalho da Coluna 1 | Cabeçalho da Coluna 2
+Linha 1, coluna 1 | Linha 1, coluna 2
+Linha 2, coluna 1 | Linha 2, coluna 2
+#table
+
+#table border
+<Produto | =Categoria | >Preço
+Mouse | A | 32,30
+Notebook | B | 2727,48
+Teclado | C | 128,65
+#table
+
+#1 Imagens
+
+#img http://site.com/foto1.jpg
+#img http://site.com/foto2.jpg 500 300
+#img http://site.com/foto3.jpg "texto alternativo"
+#img http://site.com/foto4.jpg "texto alternativo" 500 300
+
+#1 Videos
+
+#video https://www.site.com/movie.mp4 500 300
+#video https://www.youtube.com/embed/tgbNymZ7vqY
+#video https://www.youtube.com/embed/tgbNymZ7vqY 500 300
+
+#1 Cenarios de Uso
+
+#scenario
+- Passo um
+Texto do passo um
+
+- Passo dois
+
+- Passo três
+
+#scenario
+
+#scenario
+- Passo um
+Parágrafo do passo um
+
+- Passo dois
+Parágrafo do passo dois
+Outro parágrafo do passo dois
+
+- Passo três
+#img http://www.unirio.br/++theme++unirio-teste/img/logo_unirio.png
+
+
+#scenario
+
+#1 Questões
+
+#question
+Quanto é 2 x 3?
+
+() Cinco
+(*) Seis
+() Oito
+
+#question
+
+#question assess
+Primeiro parágrafo do enunciado
+
+Segundo parágrafo do enunciado
+
+() Primeira resposta
+Parágrafo da primeira resposta
+
+(*) Segunda resposta
+#img http://site.com.br/image.jpg
+
+() Terceira resposta
+#code
+25
+if (x > y)
+x++;
+#code
+
+#question
+
+#1 Parágrafos
+
+Essa é a linha inicial de um parágrafo.
+Essa frase vai continuar a linha anterior.
+Fim do parágrafo.
+Segundo parágrafo.
+Essa frase continua a linha anterior.
+Ao fim dessa linha tem uma quebra.\
+Nova linha no mesmo parágrafo com uma quebra no final.\
+\
+Última linha do parágrafo.
+
+#1 Elementos de Formatação de Texto
+
+Clique [aqui](http://google.com) para acessar o Google!
+Esse texto vai ser apresentado em **negrito**
+Esse texto vai ser apresentado em *itálico*
+Esse texto vai ser apresentado __sublinhado__
+Esse texto vai ser apresentado ~~tachado~~
+Esse texto vai ser apresentado com ++Fonte Aumentada++
+H~2~O
+X^i+1^
