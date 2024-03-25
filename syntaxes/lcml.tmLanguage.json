@@ -80,6 +80,87 @@
                 {
                     "match": "^(?!#concepts|\\-)(.+)$",
                     "name": "conceitos.descricao.lcml"
+                },
+                {
+                    "begin": "^#img\\s+",
+                    "end": "$",
+                    "name": "imagem.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s\"]+)(?=\\s|$)",
+                            "name": "imagem.url.lcml"
+                        },
+                        {
+                            "match": "\"([^\"]*)\"",
+                            "name": "imagem.texto_alternativo.lcml"
+                        },
+                        {
+                            "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
+                            "name": "imagem.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^#video\\s+",
+                    "end": "$",
+                    "name": "video.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s]+)(?=\\s|$)",
+                            "name": "video.url.lcml"
+                        },
+                        {
+                            "match": "(\\d+)\\s+(\\d+)",
+                            "name": "video.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
+                    "end": "^(\\s*$)",
+                    "name": "paragrafo.lcml",
+                    "patterns": [
+                        {
+                            "match": ".+",
+                            "name": "texto.paragrafo.lcml"
+                        }
+                    ]
+                },
+                {
+                    "name": "quebra.paragrafo.lcml",
+                    "match": "\\\\\\s*$"
+                },
+                {
+                    "name": "link.lcml",
+                    "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+                },
+                {
+                    "name": "negrito.lcml",
+                    "match": "(\\*\\*)(.+?)(\\*\\*)"
+                },
+                {
+                    "name": "italico.lcml",
+                    "match": "(\\*)(.+?)(\\*)"
+                },
+                {
+                    "name": "tachado.lcml",
+                    "match": "(~~)(.+?)(~~)"
+                },
+                {
+                    "name": "sublinhado.lcml",
+                    "match": "(__)(.+?)(__)"
+                },
+                {
+                    "name": "sobrescrito.lcml",
+                    "match": "(\\^)(.+?)(\\^)"
+                },
+                {
+                    "name": "subscrito.lcml",
+                    "match": "(~)(.+?)(~)"
+                },
+                {
+                    "name": "fonte.aumentada.lcml",
+                    "match": "(\\+\\+)(.+?)(\\+\\+)"
                 }
             ]
         },
@@ -108,8 +189,85 @@
                     "name": "cenarios.passos.lcml"
                 },
                 {
-                    "match": "^(?!#scenario|\\-)(.+)$",
-                    "name": "conceitos.descricao.lcml"
+                    "begin": "^#img\\s+",
+                    "end": "$",
+                    "name": "imagem.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s\"]+)(?=\\s|$)",
+                            "name": "imagem.url.lcml"
+                        },
+                        {
+                            "match": "\"([^\"]*)\"",
+                            "name": "imagem.texto_alternativo.lcml"
+                        },
+                        {
+                            "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
+                            "name": "imagem.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^#video\\s+",
+                    "end": "$",
+                    "name": "video.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s]+)(?=\\s|$)",
+                            "name": "video.url.lcml"
+                        },
+                        {
+                            "match": "(\\d+)\\s+(\\d+)",
+                            "name": "video.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
+                    "end": "^(\\s*$)",
+                    "name": "paragrafo.lcml",
+                    "patterns": [
+                        {
+                            "match": ".+",
+                            "name": "texto.paragrafo.lcml"
+                        }
+                    ]
+                },
+                {
+                    "name": "quebra.paragrafo.lcml",
+                    "match": "\\\\\\s*$"
+                },
+                {
+                    "name": "link.lcml",
+                    "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+                },
+                {
+                    "name": "negrito.lcml",
+                    "match": "(\\*\\*)(.+?)(\\*\\*)"
+                },
+                {
+                    "name": "italico.lcml",
+                    "match": "(\\*)(.+?)(\\*)"
+                },
+                {
+                    "name": "tachado.lcml",
+                    "match": "(~~)(.+?)(~~)"
+                },
+                {
+                    "name": "sublinhado.lcml",
+                    "match": "(__)(.+?)(__)"
+                },
+                {
+                    "name": "sobrescrito.lcml",
+                    "match": "(\\^)(.+?)(\\^)"
+                },
+                {
+                    "name": "subscrito.lcml",
+                    "match": "(~)(.+?)(~)"
+                },
+                {
+                    "name": "fonte.aumentada.lcml",
+                    "match": "(\\+\\+)(.+?)(\\+\\+)"
                 }
             ]
         },
@@ -133,6 +291,98 @@
                 {
                     "name": "questao.paragrafo.lcml",
                     "match": "^(?!#question|\\(\\*\\)|\\(\\))\\s*$"
+                },
+                {
+                    "begin": "^#img\\s+",
+                    "end": "$",
+                    "name": "imagem.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s\"]+)(?=\\s|$)",
+                            "name": "imagem.url.lcml"
+                        },
+                        {
+                            "match": "\"([^\"]*)\"",
+                            "name": "imagem.texto_alternativo.lcml"
+                        },
+                        {
+                            "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
+                            "name": "imagem.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^#video\\s+",
+                    "end": "$",
+                    "name": "video.lcml",
+                    "patterns": [
+                        {
+                            "match": "([^\\s]+)(?=\\s|$)",
+                            "name": "video.url.lcml"
+                        },
+                        {
+                            "match": "(\\d+)\\s+(\\d+)",
+                            "name": "video.dimensao.lcml"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
+                    "end": "^(\\s*$)",
+                    "name": "paragrafo.lcml",
+                    "patterns": [
+                        {
+                            "match": ".+",
+                            "name": "texto.paragrafo.lcml"
+                        }
+                    ]
+                },
+                {
+                    "name": "quebra.paragrafo.lcml",
+                    "match": "\\\\\\s*$"
+                },
+                {
+                    "name": "link.lcml",
+                    "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+                },
+                {
+                    "name": "negrito.lcml",
+                    "match": "(\\*\\*)(.+?)(\\*\\*)"
+                },
+                {
+                    "name": "italico.lcml",
+                    "match": "(\\*)(.+?)(\\*)"
+                },
+                {
+                    "name": "tachado.lcml",
+                    "match": "(~~)(.+?)(~~)"
+                },
+                {
+                    "name": "sublinhado.lcml",
+                    "match": "(__)(.+?)(__)"
+                },
+                {
+                    "name": "sobrescrito.lcml",
+                    "match": "(\\^)(.+?)(\\^)"
+                },
+                {
+                    "name": "subscrito.lcml",
+                    "match": "(~)(.+?)(~)"
+                },
+                {
+                    "name": "fonte.aumentada.lcml",
+                    "match": "(\\+\\+)(.+?)(\\+\\+)"
+                }
+            ]
+        },
+        {
+            "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
+            "end": "^(\\s*$)",
+            "name": "paragrafo.lcml",
+            "patterns": [
+                {
+                    "match": ".+",
+                    "name": "texto.paragrafo.lcml"
                 }
             ]
         },

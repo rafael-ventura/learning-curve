@@ -64,19 +64,20 @@
       }
     },
     {
-      "scope": "codigo.conteudo.lcml",
-      "settings": {
-        "foreground": "#CE9178",
-        "fontStyle": "none"
-      }
-    },
-    {
       "scope": "codigo.lcml",
       "settings": {
         "foreground": "#d4d4d4",
         "fontStyle": "bold"
       }
     },
+    {
+      "scope": "codigo.conteudo.lcml",
+      "settings": {
+        "foreground": "#CE9178",
+        "fontStyle": "none"
+      }
+    },
+    
     {
       "scope": "lista.lcml",
       "settings": {
@@ -201,7 +202,13 @@
         "foreground": "#4EC9B0"
       }
     },
-  
+    {
+      "scope": "paragrafo.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "none"
+      }
+    },
     {
       "scope": "link.lcml",
       "settings": {
