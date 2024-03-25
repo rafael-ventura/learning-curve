@@ -1,26 +1,35 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { showJavaDownloadPrompt } from './utils/showJavaDownloadPrompt';
+import { convertLCML } from './utils/convertLCML';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
+    console.log('Editor de Texto LCML ativado.');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "learning-curve" is now active!');
+    let disposable = vscode.commands.registerCommand('learning-curve.LcmlConverter', async () => {
+        try {
+            // Verifica se há um arquivo LCML aberto no editor
+            const activeEditor = vscode.window.activeTextEditor;
+            if (!activeEditor || activeEditor.document.languageId !== 'lcml') {
+                vscode.window.showErrorMessage('Nenhum arquivo LCML aberto no editor.');
+                return;
+            }
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('learning-curve.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from learning-curve!');
-	});
+            const lcmlFilePath = activeEditor.document.uri.fsPath;
+            console.log('Arquivo LCML:', lcmlFilePath);
+            await convertLCML(lcmlFilePath);
+        } catch (error) {
+            console.error('Erro ao converter LCML para HTML:', error);
+            vscode.window.showErrorMessage('Erro ao converter LCML para HTML. Consulte o console para mais detalhes.');
+        }
+    });
 
-	context.subscriptions.push(disposable);
+    console.log('Comando LcmlConverter registrado.');
+    const activatedForTheFirstTime = context.globalState.get('activatedForTheFirstTime', true);
+    if (activatedForTheFirstTime) {
+        console.log('Mostrando prompt para baixar Java...');
+        context.globalState.update('activatedForTheFirstTime', false);
+        showJavaDownloadPrompt();
+    }
+    
+    context.subscriptions.push(disposable);
 }
-
-// This method is called when your extension is deactivated
-export function deactivate() {}
