@@ -23,15 +23,17 @@ export async function callLCMLCompiler(txtFilePath: string, htmlFilePath: string
                 return;
             }
 
-            // Verificar se o arquivo HTML está vazio
-            const htmlContent = await fs.readFile(htmlFilePath, 'utf8');
-            if (!htmlContent.trim()) {
-                // Se o arquivo HTML estiver vazio, preencher com um esqueleto indicando que a compilação falhou
-                const emptyHTML = generateEmptyHTML();
-                await fs.writeFile(htmlFilePath, emptyHTML);
-                vscode.window.showErrorMessage('Erro ao converter o arquivo TXT para HTML.');
-            } else {
-                vscode.window.showInformationMessage('Arquivo HTML criado com sucesso.');
+            // Verificar se o arquivo errors.json foi gerado
+            const errorsFilePath = txtFilePath.replace('.txt', '.json');
+            if (await fs.pathExists(errorsFilePath)) {
+                const errorsContent = await fs.readFile(errorsFilePath, 'utf8');
+                const errors = JSON.parse(errorsContent);
+
+                if (errors.length > 0) {
+                    vscode.window.showErrorMessage('Erro ao compilar o arquivo TXT.');
+                    console.error('Erro ao compilar o arquivo TXT:', errors);
+                    return;
+                }
             }
         });
 
@@ -40,18 +42,4 @@ export async function callLCMLCompiler(txtFilePath: string, htmlFilePath: string
         vscode.window.showErrorMessage('Erro ao converter o arquivo TXT para HTML.');
         console.error('Erro ao converter o arquivo TXT para HTML:', error);
     }
-}
-
-// Função para gerar o esqueleto do HTML quando a compilação falha
-function generateEmptyHTML(): string {
-    return `<!DOCTYPE html>
-    <html>
-    <head>
-        <title>Compilação Falhou</title>
-    </head>
-    <body>
-        <h1>Compilação Falhou</h1>
-        <p>O arquivo não foi compilado corretamente.</p>
-    </body>
-    </html>`;
 }

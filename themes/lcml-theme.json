@@ -191,22 +191,10 @@
       }
     },
     {
-      "scope": "questao.paragrafo.lcml",
-      "settings": {
-        "fontStyle": "none"
-      }
-    },
-    {
       "scope": "quebra.paragrafo.lcml",
       "settings": {
-        "foreground": "#4EC9B0"
-      }
-    },
-    {
-      "scope": "paragrafo.lcml",
-      "settings": {
-        "foreground": "#d4d4d4",
-        "fontStyle": "none"
+        "foreground": "#4EC9B0",
+        "fontStyle": "bold"
       }
     },
     {
@@ -256,6 +244,313 @@
       "scope": "fonte.aumentada.lcml",
       "settings": {
         "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "conceitos.paragrafo.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "conceitos.link.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "conceitos.negrito.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "conceitos.italico.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "conceitos.tachado.lcml",
+      "settings": {
+        "fontStyle": "strikethrough"
+      }
+    },
+    {
+      "scope": "conceitos.sublinhado.lcml",
+      "settings": {
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "conceitos.sobrescrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "conceitos.subscrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "conceitos.fonte.aumentada.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "cenarios.paragrafo.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "cenarios.link.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "cenarios.negrito.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "cenarios.italico.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "cenarios.tachado.lcml",
+      "settings": {
+        "fontStyle": "strikethrough"
+      }
+    },
+    {
+      "scope": "cenarios.sublinhado.lcml",
+      "settings": {
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "cenarios.sobrescrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "cenarios.subscrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "cenarios.fonte.aumentada.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "questao.paragrafo.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "questao.link.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "questao.negrito.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "questao.italico.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "questao.tachado.lcml",
+      "settings": {
+        "fontStyle": "strikethrough"
+      }
+    },
+    {
+      "scope": "questao.sublinhado.lcml",
+      "settings": {
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": "questao.sobrescrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "questao.subscrito.lcml",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "questao.fonte.aumentada.lcml",
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "conceitos.imagem.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "conceitos.imagem.url.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "conceitos.imagem.texto_alternativo.lcml",
+      "settings": {
+        "foreground": "#CE9178",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "conceitos.imagem.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
+      }
+    },
+    {
+      "scope": "conceitos.video.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "conceitos.video.url.lcml",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    {
+      "scope": "conceitos.video.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
+      }
+    },
+
+    {
+      "scope": "cenarios.imagem.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "cenarios.imagem.url.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "cenarios.imagem.texto_alternativo.lcml",
+      "settings": {
+        "foreground": "#CE9178",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "cenarios.imagem.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
+      }
+    },
+    {
+      "scope": "cenarios.video.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "cenarios.video.url.lcml",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    {
+      "scope": "cenarios.video.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
+      }
+    },
+    {
+      "scope": "questao.imagem.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "questao.imagem.url.lcml",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "none"
+      }
+    },
+    {
+      "scope": "questao.imagem.texto_alternativo.lcml",
+      "settings": {
+        "foreground": "#CE9178",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "questao.imagem.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
+      }
+    },
+    {
+      "scope": "questao.video.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "questao.video.url.lcml",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    {
+      "scope": "questao.video.dimensao.lcml",
+      "settings": {
+        "foreground": "#D7BA7D"
       }
     }
   ]

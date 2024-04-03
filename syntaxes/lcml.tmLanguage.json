@@ -13,6 +13,42 @@
             ]
         },
         {
+            "name": "quebra.paragrafo.lcml",
+            "match": "\\\\\\s*$"
+        },
+        {
+            "name": "link.lcml",
+            "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+        },
+        {
+            "name": "negrito.lcml",
+            "match": "(\\*\\*)(.+?)(\\*\\*)"
+        },
+        {
+            "name": "italico.lcml",
+            "match": "(\\*)(.+?)(\\*)"
+        },
+        {
+            "name": "tachado.lcml",
+            "match": "(~~)(.+?)(~~)"
+        },
+        {
+            "name": "sublinhado.lcml",
+            "match": "(__)(.+?)(__)"
+        },
+        {
+            "name": "sobrescrito.lcml",
+            "match": "(\\^)(.+?)(\\^)"
+        },
+        {
+            "name": "subscrito.lcml",
+            "match": "(~)(.+?)(~)"
+        },
+        {
+            "name": "fonte.aumentada.lcml",
+            "match": "(\\+\\+)(.+?)(\\+\\+)"
+        },
+        {
             "begin": "^#img\\s+",
             "end": "$",
             "name": "imagem.lcml",
@@ -84,82 +120,78 @@
                 {
                     "begin": "^#img\\s+",
                     "end": "$",
-                    "name": "imagem.lcml",
+                    "name": "conceitos.imagem.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s\"]+)(?=\\s|$)",
-                            "name": "imagem.url.lcml"
+                            "name": "conceitos.imagem.url.lcml"
                         },
                         {
                             "match": "\"([^\"]*)\"",
-                            "name": "imagem.texto_alternativo.lcml"
+                            "name": "conceitos.imagem.texto_alternativo.lcml"
                         },
                         {
                             "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
-                            "name": "imagem.dimensao.lcml"
+                            "name": "conceitos.imagem.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^#video\\s+",
                     "end": "$",
-                    "name": "video.lcml",
+                    "name": "conceitos.video.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s]+)(?=\\s|$)",
-                            "name": "video.url.lcml"
+                            "name": "conceitos.video.url.lcml"
                         },
                         {
                             "match": "(\\d+)\\s+(\\d+)",
-                            "name": "video.dimensao.lcml"
+                            "name": "conceitos.video.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
                     "end": "^(\\s*$)",
-                    "name": "paragrafo.lcml",
+                    "name": "conceitos.paragrafo.lcml",
                     "patterns": [
                         {
                             "match": ".+",
-                            "name": "texto.paragrafo.lcml"
+                            "name": "conceitos.texto.paragrafo.lcml"
                         }
                     ]
                 },
                 {
-                    "name": "quebra.paragrafo.lcml",
-                    "match": "\\\\\\s*$"
-                },
-                {
-                    "name": "link.lcml",
+                    "name": "conceitos.link.lcml",
                     "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
                 },
                 {
-                    "name": "negrito.lcml",
+                    "name": "conceitos.negrito.lcml",
                     "match": "(\\*\\*)(.+?)(\\*\\*)"
                 },
                 {
-                    "name": "italico.lcml",
+                    "name": "conceitos.italico.lcml",
                     "match": "(\\*)(.+?)(\\*)"
                 },
                 {
-                    "name": "tachado.lcml",
+                    "name": "conceitos.tachado.lcml",
                     "match": "(~~)(.+?)(~~)"
                 },
                 {
-                    "name": "sublinhado.lcml",
+                    "name": "conceitos.sublinhado.lcml",
                     "match": "(__)(.+?)(__)"
                 },
                 {
-                    "name": "sobrescrito.lcml",
+                    "name": "conceitos.sobrescrito.lcml",
                     "match": "(\\^)(.+?)(\\^)"
                 },
                 {
-                    "name": "subscrito.lcml",
+                    "name": "conceitos.subscrito.lcml",
                     "match": "(~)(.+?)(~)"
                 },
                 {
-                    "name": "fonte.aumentada.lcml",
+                    "name": "conceitos.fonte.aumentada.lcml",
                     "match": "(\\+\\+)(.+?)(\\+\\+)"
                 }
             ]
@@ -191,82 +223,78 @@
                 {
                     "begin": "^#img\\s+",
                     "end": "$",
-                    "name": "imagem.lcml",
+                    "name": "cenarios.imagem.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s\"]+)(?=\\s|$)",
-                            "name": "imagem.url.lcml"
+                            "name": "cenarios.imagem.url.lcml"
                         },
                         {
                             "match": "\"([^\"]*)\"",
-                            "name": "imagem.texto_alternativo.lcml"
+                            "name": "cenarios.imagem.texto_alternativo.lcml"
                         },
                         {
                             "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
-                            "name": "imagem.dimensao.lcml"
+                            "name": "cenarios.imagem.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^#video\\s+",
                     "end": "$",
-                    "name": "video.lcml",
+                    "name": "cenarios.video.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s]+)(?=\\s|$)",
-                            "name": "video.url.lcml"
+                            "name": "cenarios.video.url.lcml"
                         },
                         {
                             "match": "(\\d+)\\s+(\\d+)",
-                            "name": "video.dimensao.lcml"
+                            "name": "cenarios.video.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
                     "end": "^(\\s*$)",
-                    "name": "paragrafo.lcml",
+                    "name": "cenarios.paragrafo.lcml",
                     "patterns": [
                         {
                             "match": ".+",
-                            "name": "texto.paragrafo.lcml"
+                            "name": "cenarios.texto.paragrafo.lcml"
                         }
                     ]
                 },
                 {
-                    "name": "quebra.paragrafo.lcml",
-                    "match": "\\\\\\s*$"
-                },
-                {
-                    "name": "link.lcml",
+                    "name": "cenarios.link.lcml",
                     "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
                 },
                 {
-                    "name": "negrito.lcml",
+                    "name": "cenarios.negrito.lcml",
                     "match": "(\\*\\*)(.+?)(\\*\\*)"
                 },
                 {
-                    "name": "italico.lcml",
+                    "name": "cenarios.italico.lcml",
                     "match": "(\\*)(.+?)(\\*)"
                 },
                 {
-                    "name": "tachado.lcml",
+                    "name": "cenarios.tachado.lcml",
                     "match": "(~~)(.+?)(~~)"
                 },
                 {
-                    "name": "sublinhado.lcml",
+                    "name": "cenarios.sublinhado.lcml",
                     "match": "(__)(.+?)(__)"
                 },
                 {
-                    "name": "sobrescrito.lcml",
+                    "name": "cenarios.sobrescrito.lcml",
                     "match": "(\\^)(.+?)(\\^)"
                 },
                 {
-                    "name": "subscrito.lcml",
+                    "name": "cenarios.subscrito.lcml",
                     "match": "(~)(.+?)(~)"
                 },
                 {
-                    "name": "fonte.aumentada.lcml",
+                    "name": "cenarios.fonte.aumentada.lcml",
                     "match": "(\\+\\+)(.+?)(\\+\\+)"
                 }
             ]
@@ -295,132 +323,81 @@
                 {
                     "begin": "^#img\\s+",
                     "end": "$",
-                    "name": "imagem.lcml",
+                    "name": "questao.imagem.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s\"]+)(?=\\s|$)",
-                            "name": "imagem.url.lcml"
+                            "name": "questao.imagem.url.lcml"
                         },
                         {
                             "match": "\"([^\"]*)\"",
-                            "name": "imagem.texto_alternativo.lcml"
+                            "name": "questao.imagem.texto_alternativo.lcml"
                         },
                         {
                             "match": "(?<=\\s)(\\d+)\\s+(\\d+)",
-                            "name": "imagem.dimensao.lcml"
+                            "name": "questao.imagem.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^#video\\s+",
                     "end": "$",
-                    "name": "video.lcml",
+                    "name": "questao.video.lcml",
                     "patterns": [
                         {
                             "match": "([^\\s]+)(?=\\s|$)",
-                            "name": "video.url.lcml"
+                            "name": "questao.video.url.lcml"
                         },
                         {
                             "match": "(\\d+)\\s+(\\d+)",
-                            "name": "video.dimensao.lcml"
+                            "name": "questao.video.dimensao.lcml"
                         }
                     ]
                 },
                 {
                     "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
                     "end": "^(\\s*$)",
-                    "name": "paragrafo.lcml",
+                    "name": "questao.paragrafo.lcml",
                     "patterns": [
                         {
                             "match": ".+",
-                            "name": "texto.paragrafo.lcml"
+                            "name": "questao.texto.paragrafo.lcml"
                         }
                     ]
                 },
                 {
-                    "name": "quebra.paragrafo.lcml",
-                    "match": "\\\\\\s*$"
-                },
-                {
-                    "name": "link.lcml",
+                    "name": "questao.link.lcml",
                     "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
                 },
                 {
-                    "name": "negrito.lcml",
+                    "name": "questao.negrito.lcml",
                     "match": "(\\*\\*)(.+?)(\\*\\*)"
                 },
                 {
-                    "name": "italico.lcml",
+                    "name": "questao.italico.lcml",
                     "match": "(\\*)(.+?)(\\*)"
                 },
                 {
-                    "name": "tachado.lcml",
+                    "name": "questao.tachado.lcml",
                     "match": "(~~)(.+?)(~~)"
                 },
                 {
-                    "name": "sublinhado.lcml",
+                    "name": "questao.sublinhado.lcml",
                     "match": "(__)(.+?)(__)"
                 },
                 {
-                    "name": "sobrescrito.lcml",
+                    "name": "questao.sobrescrito.lcml",
                     "match": "(\\^)(.+?)(\\^)"
                 },
                 {
-                    "name": "subscrito.lcml",
+                    "name": "questao.subscrito.lcml",
                     "match": "(~)(.+?)(~)"
                 },
                 {
-                    "name": "fonte.aumentada.lcml",
+                    "name": "questao.fonte.aumentada.lcml",
                     "match": "(\\+\\+)(.+?)(\\+\\+)"
                 }
             ]
-        },
-        {
-            "begin": "^(?!#|\\-|\\\\|\\()(.+)$",
-            "end": "^(\\s*$)",
-            "name": "paragrafo.lcml",
-            "patterns": [
-                {
-                    "match": ".+",
-                    "name": "texto.paragrafo.lcml"
-                }
-            ]
-        },
-        {
-            "name": "quebra.paragrafo.lcml",
-            "match": "\\\\\\s*$"
-        },
-        {
-            "name": "link.lcml",
-            "match": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
-        },
-        {
-            "name": "negrito.lcml",
-            "match": "(\\*\\*)(.+?)(\\*\\*)"
-        },
-        {
-            "name": "italico.lcml",
-            "match": "(\\*)(.+?)(\\*)"
-        },
-        {
-            "name": "tachado.lcml",
-            "match": "(~~)(.+?)(~~)"
-        },
-        {
-            "name": "sublinhado.lcml",
-            "match": "(__)(.+?)(__)"
-        },
-        {
-            "name": "sobrescrito.lcml",
-            "match": "(\\^)(.+?)(\\^)"
-        },
-        {
-            "name": "subscrito.lcml",
-            "match": "(~)(.+?)(~)"
-        },
-        {
-            "name": "fonte.aumentada.lcml",
-            "match": "(\\+\\+)(.+?)(\\+\\+)"
         }
     ]
 }

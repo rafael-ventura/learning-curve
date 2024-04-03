@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
-import { callLCMLCompiler } from './compilador';
+import { callLCMLCompiler } from './compiler';
 
 export async function convertLCML(lcmlFilePath: string): Promise<void> {
     try {
