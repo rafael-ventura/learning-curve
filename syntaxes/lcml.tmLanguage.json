@@ -321,6 +321,17 @@
                     "match": "^(?!#question|\\(\\*\\)|\\(\\))\\s*$"
                 },
                 {
+                    "begin": "^#code\\s*$",
+                    "end": "^#code\\s*$",
+                    "name": "questao.codigo.lcml",
+                    "patterns": [
+                        {
+                            "match": ".+",
+                            "name": "questao.codigo.conteudo.lcml"
+                        }
+                    ]
+                },
+                {
                     "begin": "^#img\\s+",
                     "end": "$",
                     "name": "questao.imagem.lcml",

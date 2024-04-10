@@ -77,7 +77,6 @@
         "fontStyle": "none"
       }
     },
-    
     {
       "scope": "lista.lcml",
       "settings": {
@@ -551,6 +550,20 @@
       "scope": "questao.video.dimensao.lcml",
       "settings": {
         "foreground": "#D7BA7D"
+      }
+    },
+    {
+      "scope": "questao.codigo.lcml",
+      "settings": {
+        "foreground": "#d4d4d4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "questao.codigo.conteudo.lcml",
+      "settings": {
+        "foreground": "#CE9178",
+        "fontStyle": "none"
       }
     }
   ]

@@ -16,13 +16,16 @@ export async function callLCMLCompiler(txtFilePath: string, htmlFilePath: string
         const command = `java -jar "${jarPath}" "${txtFilePath}" "${htmlFilePath}"`;
 
         // Executar o comando no terminal
-        child_process.exec(command, async (error, stdout, stderr) => {
+        child_process.exec(command, { cwd: path.dirname(txtFilePath) }, async (error, stdout, stderr) => {
+            console.log(`stdout: ${stdout}`);
+            console.error(`stderr: ${stderr}`);
             if (error) {
                 vscode.window.showErrorMessage('Erro ao converter o arquivo TXT para HTML.');
                 console.error('Erro ao converter o arquivo TXT para HTML:', error);
                 return;
             }
 
+            console.log("Comando executado com sucesso:", command);
             // Verificar se o arquivo errors.json foi gerado
             const errorsFilePath = txtFilePath.replace('.txt', '.json');
             if (await fs.pathExists(errorsFilePath)) {
@@ -36,8 +39,6 @@ export async function callLCMLCompiler(txtFilePath: string, htmlFilePath: string
                 }
             }
         });
-
-        console.log("Comando executado com sucesso:", command);
     } catch (error) {
         vscode.window.showErrorMessage('Erro ao converter o arquivo TXT para HTML.');
         console.error('Erro ao converter o arquivo TXT para HTML:', error);
