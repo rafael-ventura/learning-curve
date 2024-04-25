@@ -1,0 +1,65 @@
+{
+    "name": "learning-curve",
+    "displayName": "learning-curve",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.87.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/core/Activation.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "learning-curve.LcmlConverter",
+                "title": "Convert LCML to HTML"
+            }
+        ],
+        "languages": [
+            {
+                "id": "lcml",
+                "extensions": [
+                    ".lcml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lcml",
+                "scopeName": "source.lcml",
+                "path": "./syntaxes/lcml.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Learning Curve",
+                "uiTheme": "vs-dark",
+                "path": "./themes/lcml-theme.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^18.19.26",
+        "@types/vscode": "^1.87.0",
+        "@typescript-eslint/eslint-plugin": "^7.0.2",
+        "@typescript-eslint/parser": "^7.0.2",
+        "@vscode/test-cli": "^0.0.6",
+        "@vscode/test-electron": "^2.3.9",
+        "eslint": "^8.56.0",
+        "typescript": "^5.3.3"
+    }
+}

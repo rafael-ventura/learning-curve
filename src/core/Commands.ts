@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { convertLCML } from '../utils/convertLCML';
+import { convertLCML } from '../compiler/LCMLConverter';
 
 export function registerCommands(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('learning-curve.LcmlConverter', async () => {
